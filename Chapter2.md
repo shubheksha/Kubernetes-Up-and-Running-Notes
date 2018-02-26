@@ -1,5 +1,3 @@
-#Kubernetes/Books/K8s Up And Running/chapter 2#
-
 # Chapter 2: Creating and Running Containers
 The distributed systems that can be deployed by k8s are made up primarily of *application container images*.
 
@@ -28,7 +26,7 @@ Once an image is present on a computer, it can be run to get an application runn
 **Note on Container Layering:**
 Each layer inherits and modifies previous layer in an image
 Example:
-![](Chapter%202/C4B4C456-A459-4940-B018-95B429893C0E.png)
+![](images/container-images-1.png)
 
 Containers B and C are *forked* from A and share nothing beside the base container’s files.
 Each container image builds on the previous one. Each reference to the parent image is a pointer.
@@ -67,7 +65,7 @@ Don’t ever have passwords/secrets in any layer of your container image. Deleti
 ### Optimising Image Sizes
 - If a file is present in a preceding layer, it’ll be present in the image that uses that layer even though it’ll be inaccessible. 
 Consider this example:
-![](Chapter%202/60896C28-D934-4A80-95C6-D1CD85EAABAA.png)
+![](images/container-images-2.png)
 
 It’s not that *BigFile* isn’t present in the final image. It’s just not accessible.  As it is still present in layer A, whenever the image is pushed or pulled the file goes over the network.
 
@@ -76,8 +74,8 @@ As a rule of thumb, the layers should be ordered from least likely to change to 
 
 ## Storing Images in a Remote Registry
 To  easily share container images to promote reuse and make them available on more machines, we use what’s called a registry. It’s a remote location where we can push our images and other people can download them from there. They’re of two types:
-1) Public: anyone can download images
-2) Private: authorisation is needed to download images 
+1. Public: anyone can download images
+2. Private: authorisation is needed to download images 
 
 The book uses the Google Container Registry whereas I used the Docker Hub. 
 After creating an account on Docker Hub, run the following commands:
