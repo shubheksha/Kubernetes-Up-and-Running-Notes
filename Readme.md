@@ -8,3 +8,4 @@ My notes from the book [Kubernetes Up and Running](http://shop.oreilly.com/produ
 5. [Pods](Chapter5.md) [incomplete]
 6. [Labels and Annotations](Chapter6.md)
 7. [Service Discovery](Chapter7.md)
+8. [ReplicaSets](Chapter8.md)
