@@ -9,3 +9,4 @@ My notes from the book [Kubernetes Up and Running](http://shop.oreilly.com/produ
 6. [Labels and Annotations](Chapter6.md)
 7. [Service Discovery](Chapter7.md)
 8. [ReplicaSets](Chapter8.md)
+9. [DaemonSets](Chapter9.md)
